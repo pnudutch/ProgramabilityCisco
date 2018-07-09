@@ -13,12 +13,12 @@ FORTUNES = [
 ]
 
 
-def generate_fortune() -> str:
+def generate_fortune():
     """Use mystical forces (a random selection) to get a user's fortune."""
     return random.choice(FORTUNES)
 
 
-def generate_lucky_numbers(how_many: int) -> list:
+def generate_lucky_numbers(how_many: int):
     """Returns a list of (random) 'lucky' numbers."""
     lucky_numbers = []
     for _ in range(how_many):
@@ -26,7 +26,7 @@ def generate_lucky_numbers(how_many: int) -> list:
     return lucky_numbers
 
 
-def create_fortune_cookie_message(how_many_lucky_numbers: int) -> str:
+def create_fortune_cookie_message(how_many_lucky_numbers: int):
     """Create and return a fortune cookie message.
 
     The message should include the user's fortune and lucky numbers.
@@ -34,8 +34,9 @@ def create_fortune_cookie_message(how_many_lucky_numbers: int) -> str:
     # TODO: Create a fortune cookie message by calling generate_fortune() and
     # generate_lucky_numbers() and then composing and returning the fortune
     # cookie's message.
-
-    raise NotImplementedError()
+    fortune = generate_fortune()
+    number = generate_lucky_numbers(how_many_lucky_numbers)
+    return '{}: {}'.format(fortune,number)
 
 
 def main():
